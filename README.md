@@ -1,8 +1,6 @@
 # Crowd-Counting
 Project is to count the number group of people in an image and to count number of persons associated with each group. Here two enhanced Convolutional models have used in building effective crowd counting architecture.
 
-Crowd counting and Analysis have a plethora of real-world applications such as planning emergency evacuations in case of fire outbreaks, calamitous events, etc. and making informed decisions on the basis of the number of people such as water, food planning, detecting congestion etc
-
 Objectives in Building Crowd Counting model:-
 ```
 
@@ -27,7 +25,7 @@ Steps involved in Building Crowd Counting model:-
 
             Steps in Crowd Counting model :-
 
-              1)      Train a Group Detection Convolutional Neural Network in extracting the count of persons in image,
+              1)      Preprocess image data and Train a Group Detection Convolutional Neural Network in extracting the count of persons in image,
 
               2)      Extract image groups associated with each image from Inbetween layer output of Convolutional Neural network,
 
@@ -50,24 +48,19 @@ Steps involved in Building Crowd Counting model:-
 ![alt text](https://github.com/Nagakiran1/Crowd-Counting/blob/main/Capture.PNG)
 
 
-**1) Optical Scanning :scissors: from Image :**
+**1) Preprocessing Image data and trainig :scissors: from Image :**
 
- - Select any document or letter of having text information 
+ - Select any survelience data of images representing crowd 
  ![alt text](https://github.com/Nagakiran1/4-simple-steps-in-Builiding-OCR/blob/master/sample.jpg) 
- -  ***Extract Character boundaries***
+ -  ***Remove noise and background***
+             Model based background removal approach have take at here in removing the background common area of images, followed by applying morphological transformation to suppress the gaps of image noise, further to morphological tranformation Gassian blur and other image jprocessing techniques have used in synthesizing the image dataset.
              Contours can be explained simply as a curve joining all the continuous points (along the boundary). The contours are a useful tool for shape analysis and object detection and recognition. Here Contours explained in differentiating each individual character in an image with using [contour dilation](https://docs.opencv.org/trunk/d9/d61/tutorial_py_morphological_ops.html) technique.
-             Create a boundary to each character in an image with using [OpenCV Contours](https://docs.opencv.org/3.3.0/dd/d49/tutorial_py_contour_features.html) method. 
-             Character recognition with the use ofOpenCV contours method
+             
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![alt text](https://github.com/Nagakiran1/Crowd-Counting/blob/main/Models/img1.png)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![alt text](https://github.com/Nagakiran1/4-simple-steps-in-Builiding-OCR/blob/master/Countours.PNG)
 
 
             
-***Naming Convention followed***
-the extracted Text characters should be labelled with the Original character associated with it.
-
-Here the Naming convention followed for the letters is last letter of file name should be the name associated with the character.
-             
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![alt text](https://github.com/Nagakiran1/4-simple-steps-in-Builiding-OCR/blob/master/character%20Labelling.PNG)
  
 
@@ -83,7 +76,9 @@ Here the Naming convention followed for the letters is last letter of file name 
 
             (c) compression in the amount of information to be retained.
 
-            
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![alt text](https://github.com/Nagakiran1/Crowd-Counting/blob/main/Models/img2.png)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![alt text](https://github.com/Nagakiran1/Crowd-Counting/blob/main/Models/img3.png)
+
 
  
  
