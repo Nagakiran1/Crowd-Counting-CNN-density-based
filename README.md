@@ -51,7 +51,7 @@ Steps involved in Building Crowd Counting model:-
 **1) Preprocessing Image data and trainig :scissors: from Image :**
 
  - Select any survelience data of images representing crowd 
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![alt text](https://github.com/Nagakiran1/Crowd-Counting/blob/main/Models/img1.png)
+ 
  -  ***Remove noise and background***
              Model based background removal approach have take at here in removing the background common area of images, followed by applying morphological transformation to suppress the gaps of image noise, further to morphological tranformation Gassian blur and other image jprocessing techniques have used in synthesizing the image dataset.
              
@@ -69,7 +69,8 @@ Steps involved in Building Crowd Counting model:-
             (b) normalization of the data and
 
             (c) compression in the amount of information to be retained.
-
+            
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![alt text](https://github.com/Nagakiran1/Crowd-Counting/blob/main/Models/img1.png)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![alt text](https://github.com/Nagakiran1/Crowd-Counting/blob/main/Models/img2.png)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![alt text](https://github.com/Nagakiran1/Crowd-Counting/blob/main/Models/img3.png)
 
@@ -85,10 +86,16 @@ Steps involved in Building Crowd Counting model:-
  
   ![alt text](https://github.com/Nagakiran1/Receipt_Image_Classification-/blob/master/ConvNet1.png)
  
-- [x] 1st Model will train on the Individual Character Images with direct Classification to predict the Images with softmax Classification of Character Categories.
-- [ ] 2nd Model is same model with last before layer as predictor which will Calculate a Embedding of specified Flatten Neurons ( The Predicted flatten Values will have Feature Information of Receipt Images ).
+- [x] 1st Model will train on the Individual Crowd Image to quantify number of persons in an image.
+- [ ] 2nd Model is same model with last before layer as predictor which will Calculate a Embedding of specified Flatten Neurons ( The Predicted flatten Values will have Feature Information of Persons cluster Images ).
             
   - Convolution Last before layer Embedding Output is considered as Pattern Feature of Image.
+  
+  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![alt text](https://github.com/Nagakiran1/Crowd-Counting/blob/main/Models/img4.png)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![alt text](https://github.com/Nagakiran1/Crowd-Counting/blob/main/Models/img5.png)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![alt text](https://github.com/Nagakiran1/Crowd-Counting/blob/main/Models/img6.png)
+  
 
 **3) Load Trained ConvNet OCR model:**
 
