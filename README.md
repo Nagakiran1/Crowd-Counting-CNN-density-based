@@ -50,7 +50,7 @@ Steps involved in Building Crowd Counting model:-
  - to download sample [labelled character Images](https://github.com/Nagakiran1/Crowd-Counting/blob/main/DownloadData.py)
 
 
-![alt text](https://github.com/Nagakiran1/Crowd-Counting/blob/main/Capture.PNG)
+![alt text](https://github.com/Nagakiran1/Crowd-Counting/blob/main/Capture1.PNG)
 
 
 **1) Preprocessing Image data and trainig :scissors: from Image :**
