@@ -51,18 +51,12 @@ Steps involved in Building Crowd Counting model:-
 **1) Preprocessing Image data and trainig :scissors: from Image :**
 
  - Select any survelience data of images representing crowd 
- ![alt text](https://github.com/Nagakiran1/4-simple-steps-in-Builiding-OCR/blob/master/sample.jpg) 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![alt text](https://github.com/Nagakiran1/Crowd-Counting/blob/main/Models/img1.png)
  -  ***Remove noise and background***
              Model based background removal approach have take at here in removing the background common area of images, followed by applying morphological transformation to suppress the gaps of image noise, further to morphological tranformation Gassian blur and other image jprocessing techniques have used in synthesizing the image dataset.
+             
              Contours can be explained simply as a curve joining all the continuous points (along the boundary). The contours are a useful tool for shape analysis and object detection and recognition. Here Contours explained in differentiating each individual character in an image with using [contour dilation](https://docs.opencv.org/trunk/d9/d61/tutorial_py_morphological_ops.html) technique.
              
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![alt text](https://github.com/Nagakiran1/Crowd-Counting/blob/main/Models/img1.png)
-
-
-
-            
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![alt text](https://github.com/Nagakiran1/4-simple-steps-in-Builiding-OCR/blob/master/character%20Labelling.PNG)
- 
 
 
 - ***Pre-processing***
