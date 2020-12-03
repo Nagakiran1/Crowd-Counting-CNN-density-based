@@ -4,7 +4,7 @@ Project is to count the number group of people in an image and to count number o
 [Crowd counting image data source and analysis associated with the data step by step code in Google colab notebook](https://colab.research.google.com/github/Nagakiran1/Crowd-Counting/blob/main/CrowdCouting.ipynb)
 
 
-[Click on the link to redirect to Testing the model in Google Colab environment](https://colab.research.google.com/github.com/Nagakiran1/Crowd-Counting/blob/main/Testing_CrowdCountingModel.ipynb)
+[Click on the link to redirect to Testing the model in Google Colab environment](https://colab.research.google.com/github/Nagakiran1/Crowd-Counting/blob/main/Testing_CrowdCountingModel.ipynb)
 
 Objectives in Building Crowd Counting model:-
 ```
