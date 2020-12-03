@@ -97,27 +97,29 @@ Steps involved in Building Crowd Counting model:-
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![alt text](https://github.com/Nagakiran1/Crowd-Counting/blob/main/Models/img6.png)
   
 
-**3) Load Trained ConvNet OCR model:**
+**3) Segregate data for the second model from clusters for groups:**
 
-Optical Character recognition last step involves preprocessing of image into specific word related contours and letter contours, followed by prediction and consolidating according to letter and word related contours in an image.
+Crowd groups extracted from 1st model would be segregated with step by step image processing techniques of Contour formation, Gassian blur etc..
 
-
-once affter training the model loading the pre-trained Optical character recognition model.
+\
 
 - !) Once after training the OCR model on labelled names data, load the pre trained model in recognising the specific character. .
 - !!) Predict each character image and label it with the prediction associated with the Optical character recognition technique.
 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![alt text](https://github.com/Nagakiran1/Crowd-Counting/blob/main/Models/img7.png)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![alt text](https://github.com/Nagakiran1/Crowd-Counting/blob/main/Models/img8.png)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![alt text](https://github.com/Nagakiran1/4-simple-steps-in-Builiding-OCR/blob/master/OCR%20workflow.PNG)
 
 
 
 
             
-**4) Test and Consolidate Predictions of OCR :**
+**4) Test and Consolidate Predictions of Crowd Detection model :**
 
 Consolidate predicitons involves, assigning specific ID to each word related contour with the line associated with the word in image, Consolidating all predictions in a sorted series of specific word related contour and letters associated word.
-![alt text](https://github.com/Nagakiran1/4-simple-steps-in-Builiding-OCR/blob/master/Word_contour.PNG)
+![alt text](https://github.com/Nagakiran1/Crowd-Counting/blob/main/Models/img9.png)
+![alt text](https://github.com/Nagakiran1/Crowd-Counting/blob/main/Models/img10.png)
+![alt text](https://github.com/Nagakiran1/Crowd-Counting/blob/main/Models/img11.png)
 
 - Predict each character image and label it with the prediction associated with the Optical character recognition technique.
 - Fix the word associated with the prediction with the use of word contour and line through line related contour and consolidate all together.
