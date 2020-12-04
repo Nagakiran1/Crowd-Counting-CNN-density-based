@@ -34,9 +34,9 @@ Steps involved in Building Crowd Counting model:-
 
               2)      Extract image groups associated with each image from Inbetween layer output of Convolutional Neural network,
 
-              3)      Applying Image processing techniques of Contour formation, filtering contours, gausian blur, median blur etc. to segregate group of images individually,
+              3)      Applying Image processing techniques of Contour formation, filtering contours, gausian blur, median blur etc. to segregate group of poeple in image individually,
               
-              4)      Train a Person Detection Convolutional Neural Network in extracting the count of persons in image,
+              4)      Train a Person Detection Convolutional Neural Network in extracting the count of persons in image from each group detected,
               
               5)      Segregate the count of persons each group and show case in an image with rectangle.
 
