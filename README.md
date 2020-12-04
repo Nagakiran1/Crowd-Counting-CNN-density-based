@@ -108,8 +108,8 @@ Crowd groups extracted from 1st model would be segregated with step by step imag
 
 \
 
-- !) Once after training the OCR model on labelled names data, load the pre trained model in recognising the specific character. .
-- !!) Predict each character image and label it with the prediction associated with the Optical character recognition technique.
+- !) Once after training the Group Detection model on labelled number of persons data, load the pre trained model in Extracting the groups by Image processing techniques from 5th Layer of trained model predictions.
+- !!) Apply Image processing techniques to synthesize the Group detection model outputs.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![alt text](https://github.com/Nagakiran1/Crowd-Counting/blob/main/Models/img7.png)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![alt text](https://github.com/Nagakiran1/Crowd-Counting/blob/main/Models/img8.png)
