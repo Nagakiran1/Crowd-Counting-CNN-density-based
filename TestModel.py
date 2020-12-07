@@ -99,26 +99,29 @@ def LoadModels():
     return GroupModel, PersonModel, activation_model
 
 
-
 ModeofImage = np.load('ModeOfImage.npy')
 
 img = ReadData()
 GroupModel, PersonModel, activation_model = LoadModels()
 
+while True:
+    
+    # Testing on one random image
+    rvalue = np.random.randint(50)
+    image = img[rvalue]
+    
+    
+    array = Preoprocessimage(image.copy(), ModeofImage)[None,:]
+    
+    df, CG, n, im2 = GenerateInsideData(activation_model, array, image.copy(), testing=True)
+    
+    df['NoofPersons'] = PersonModel.predict(CG).flatten()
+    df1 = df.loc[df['NoofPersons']>3]
+    im1 = image.copy()
+    im1 = PlotGroups(im1, df1, font=0.8)
 
-rvalue = np.random.randint(50)
-image = img[rvalue]
+    cv2.imshow(im1)
+    if cv2.waitKey(33)==27:
+        break
+    
 
-
-array = Preoprocessimage(image.copy(), ModeofImage)[None,:]
-
-df, CG, n, im2 = GenerateInsideData(activation_model, array, image.copy(), testing=True)
-
-df['NoofPersons'] = PersonModel.predict(CG).flatten()
-df1 = df.loc[df['NoofPersons']>3]
-im1 = image.copy()
-im1 = PlotGroups(im1, df1, font=0.8)
-
-plt.matshow(image, cmap='viridis')  
-
-plt.matshow(im1, cmap='viridis')
