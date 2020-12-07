@@ -1,24 +1,25 @@
-from tensorflow.keras.models import model_from_json
+from keras.models import model_from_json
 import numpy as np
-
+from keras import models
 import cv2, os
 import numpy as np
-
+import pandas as pd
+import matplotlib.pyplot as plt
 from Utils import FilterContours,ApplyContours, AdjustContours, FilterImage, Preoprocessimage
 
-def Preoprocessimage(a, ModeofImage):
-  #a[np.abs(a[:,:,0]-m[:,:,0])<10] = 255
-  a[np.abs(a.sum(2) - ModeofImage.sum(2))<25] = 255
-  kernel = np.ones((2,2),np.uint8)
-  b = cv2.morphologyEx(a, cv2.MORPH_OPEN, kernel)
-  b = cv2.GaussianBlur(b,(3,3),0)
-  return b
+# def Preoprocessimage(a, ModeofImage):
+#   #a[np.abs(a[:,:,0]-m[:,:,0])<10] = 255
+#   a[np.abs(a.sum(2) - ModeofImage.sum(2))<25] = 255
+#   kernel = np.ones((2,2),np.uint8)
+#   b = cv2.morphologyEx(a, cv2.MORPH_OPEN, kernel)
+#   b = cv2.GaussianBlur(b,(3,3),0)
+#   return b
 
 def GetNoofPersons(points, row):
   coords = points[((points[:,0]>row['x']) & (points[:,0]<(row['x']+row['w']))) & ((points[:,1]>row['y']) & (points[:,1]<(row['y']+row['h'])))]
   return coords.shape[0]
 
-def GenerateInsideData(activation_model, array, points=None, image, testing=False):
+def GenerateInsideData(activation_model, array, image, points=None, testing=False):
   # Buidling inbetween 6 layer model of trained model
   a = activation_model.predict(array)
   # print(int(model.predict(array)[0][0]), '  -  ', labels[rvalue])
@@ -97,26 +98,27 @@ def LoadModels():
     
     return GroupModel, PersonModel, activation_model
 
+
+
 ModeofImage = np.load('ModeOfImage.npy')
 
 img = ReadData()
 GroupModel, PersonModel, activation_model = LoadModels()
 
-while True:
-    # Testing on one random image
-    rvalue = np.random.randint(2000)
-    image = img[rvalue]
-    array = Preoprocessimage(image.copy(), ModeofImage)[None,:]
-    
-    df, CG, n, im2 = GenerateInsideData(activation_model, array, points, image.copy(), testing=True)
-    
-    df['NoofPersons'] = PersonModel.predict(CG).flatten()
-    df1 = df.loc[df['NoofPersons']>3]
-    im1 = image.copy()
-    PlotGroups(im1, df1, font=0.8)
 
-    cv2.imshow(im1)
-    if cv2.waitKey(33)==27:
-        break
-    
+rvalue = np.random.randint(50)
+image = img[rvalue]
 
+
+array = Preoprocessimage(image.copy(), ModeofImage)[None,:]
+
+df, CG, n, im2 = GenerateInsideData(activation_model, array, image.copy(), testing=True)
+
+df['NoofPersons'] = PersonModel.predict(CG).flatten()
+df1 = df.loc[df['NoofPersons']>3]
+im1 = image.copy()
+im1 = PlotGroups(im1, df1, font=0.8)
+
+plt.matshow(image, cmap='viridis')  
+
+plt.matshow(im1, cmap='viridis')
